@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+    name: myflask
+
+spec: 
+   replicas: 1
+   selector: 
+       matchLabels: 
+            name: myflask
+   template: 
+        metadata:
+            labels:  
+              name: myflask
+        spec: 
+          containers: 
+              - name: flaskapp
+                image: rtxverma123/jenkinsbootstrap
+                ports: 
+                   - containerPort: 5001  
